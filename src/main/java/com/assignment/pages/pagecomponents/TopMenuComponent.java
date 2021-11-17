@@ -11,13 +11,17 @@ public final class TopMenuComponent {
     private final By txtboxSearch = By.id("twotabsearchtextbox");
     private final By btnSearch = By.id("nav-search-submit-button");
 
-    public TopMenuComponent setTextInSearch(String item){
+    private TopMenuComponent setTextInSearch(String item){
         waitAndEnterText(txtboxSearch,item,"Text Box Search");
         return this;
     }
 
-    public void clickSearch(){
+    private void clickSearch(){
         waitAndClick(btnSearch,"Search");
+    }
+
+    public void searchAnItemInSearchBar(String item){
+        setTextInSearch(item).clickSearch();
     }
 
 }

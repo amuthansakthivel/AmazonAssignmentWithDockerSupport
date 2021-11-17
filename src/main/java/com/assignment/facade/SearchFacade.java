@@ -10,6 +10,6 @@ public final class SearchFacade {
         homePage = new HomePage();
     }
     public void searchItem(String item){
-        homePage.searchItemInSearchBox(item);
+        homePage.searchItemInSearchBox(item).sortResultsWithPriceHighToLow();
     }
 }
