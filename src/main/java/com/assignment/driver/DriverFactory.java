@@ -1,5 +1,6 @@
 package com.assignment.driver;
 
+import com.assignment.config.factory.ConfigFactory;
 import com.assignment.driver.enums.DriverType;
 import com.assignment.driver.impl.ChromeManager;
 import com.assignment.driver.impl.EdgeManager;
@@ -12,7 +13,7 @@ public final class DriverFactory {
 
     public static WebDriver getDriver(){
         WebDriver driver;
-        switch (DriverType.valueOf("CHROME")){
+        switch (ConfigFactory.getConfig().browser()){
             case CHROME:
                 driver = new ChromeManager().getDriver();
                 break;
