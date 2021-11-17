@@ -1,5 +1,6 @@
 package com.assignment.driver;
 
+import com.assignment.config.factory.ConfigFactory;
 import com.assignment.driver.factory.DriverFactory;
 
 import java.util.Objects;
@@ -18,9 +19,15 @@ public final class Driver {
         return driver;
     }
 
-    public void setUpDriver(){
+    public Driver setUpDriver(){
         if (Objects.isNull(DriverManager.getDriver()))
             DriverManager.setDriver(DriverFactory.getDriver());
+        return this;
+    }
+
+    public void loadURL(){
+        String urlUnderTest = ConfigFactory.getConfig().url();
+        DriverManager.getDriver().get(urlUnderTest);
     }
 
     public void tearDownDriver(){
