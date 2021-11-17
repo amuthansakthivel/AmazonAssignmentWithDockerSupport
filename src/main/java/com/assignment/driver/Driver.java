@@ -25,12 +25,15 @@ public final class Driver {
         return this;
     }
 
-    public void loadURL(){
+    public Driver loadURL(){
         String urlUnderTest = ConfigFactory.getConfig().url();
         DriverManager.getDriver().get(urlUnderTest);
+        return this;
     }
 
-
+    public void maximiseWindow(){
+        DriverManager.getDriver().manage().window().maximize();
+    }
 
     public void tearDownDriver(){
         if(Objects.nonNull(DriverManager.getDriver()))

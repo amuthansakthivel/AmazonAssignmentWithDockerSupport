@@ -10,7 +10,7 @@ public class AddToCartTests {
 
     @BeforeMethod
     public void setUp(){
-        Driver.getInstance().setUpDriver().loadURL();
+        Driver.getInstance().setUpDriver().loadURL().maximiseWindow();
     }
 
     @AfterMethod
