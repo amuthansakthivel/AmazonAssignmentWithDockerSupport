@@ -6,11 +6,15 @@ public class HomePage {
 
     private final TopMenuComponent topMenuComponent;
 
-    private HomePage(){
+    public HomePage(){
         topMenuComponent = new TopMenuComponent();
     }
 
-
+    public void searchItemInSearchBox(String item){
+        topMenuComponent
+                .setTextInSearch(item)
+                .clickSearch();
+    }
 
 
 

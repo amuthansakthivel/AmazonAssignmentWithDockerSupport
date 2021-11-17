@@ -1,14 +1,23 @@
 package com.assignment.pages.pagecomponents;
 
+
 import org.openqa.selenium.By;
 
-public class TopMenuComponent {
+import static com.assignment.utils.SeleniumActions.waitAndClick;
+import static com.assignment.utils.SeleniumActions.waitAndEnterText;
 
-    By txtboxSearch = By.id("twotabsearchtextbox");
+public final class TopMenuComponent {
 
-    public TopMenuComponent setTextInSearch(){
+    private final By txtboxSearch = By.id("twotabsearchtextbox");
+    private final By btnSearch = By.id("nav-search-submit-button");
 
+    public TopMenuComponent setTextInSearch(String item){
+        waitAndEnterText(txtboxSearch,item,"Text Box Search");
         return this;
+    }
+
+    public void clickSearch(){
+        waitAndClick(btnSearch,"Search");
     }
 
 }

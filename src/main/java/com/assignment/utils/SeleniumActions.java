@@ -10,16 +10,16 @@ public final class SeleniumActions {
 
     private SeleniumActions(){}
 
-    public void waitAndClick(By by,String elementname){
+    public static void waitAndClick(By by,String elementname){
         waitForElementToBePresent(by).click();
         //TODO element name for logging
     }
 
-    public void waitAndEnterText(By by,String value,String elementname){
+    public static void waitAndEnterText(By by,String value,String elementname){
         waitForElementToBePresent(by).sendKeys(value);
     }
 
-    private WebElement waitForElementToBePresent(By by){
+    private static WebElement waitForElementToBePresent(By by){
         return new WebDriverWait(DriverManager.getDriver(),10)
                 .until(ExpectedConditions.presenceOfElementLocated(by));
     }

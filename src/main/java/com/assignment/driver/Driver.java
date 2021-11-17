@@ -30,6 +30,8 @@ public final class Driver {
         DriverManager.getDriver().get(urlUnderTest);
     }
 
+
+
     public void tearDownDriver(){
         if(Objects.nonNull(DriverManager.getDriver()))
             DriverManager.getDriver().quit();
