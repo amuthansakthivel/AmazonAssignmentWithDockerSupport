@@ -13,7 +13,7 @@ public final class CheckoutFacade {
     public Double getTotalCartValue(){
         return checkoutPage.getPriceFromCheckoutPage();
     }
-    public void navigateToLoginOrPaymentPage(){
-        checkoutPage.clickOnProceedToBuy();
+    public String clickProceedToBuyAndReturnTitle(){
+        return checkoutPage.clickOnProceedToBuy();
     }
 }

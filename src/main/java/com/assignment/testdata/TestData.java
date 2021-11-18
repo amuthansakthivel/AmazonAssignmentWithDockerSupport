@@ -10,4 +10,5 @@ public class TestData {
 
     private String itemName;
     private int quantity;
+    private String titleToVerify;
 }

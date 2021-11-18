@@ -1,5 +1,6 @@
 package com.assignment.pages;
 
+import com.assignment.driver.DriverManager;
 import com.assignment.pages.pagecomponents.CartSummaryComponent;
 
 public final class CheckoutPage {
@@ -14,7 +15,8 @@ public final class CheckoutPage {
         return cartSummaryComponent.getTotalCartPrice();
     }
 
-    public void clickOnProceedToBuy(){
+    public String clickOnProceedToBuy(){
         cartSummaryComponent.clickProceedToBuy();
+        return DriverManager.getDriver().getTitle();
     }
 }

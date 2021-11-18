@@ -36,8 +36,9 @@ public final class Driver {
     }
 
     public void tearDownDriver(){
-        if(Objects.nonNull(DriverManager.getDriver()))
-            DriverManager.getDriver().quit();
+        if(Objects.nonNull(DriverManager.getDriver())) {
+            DriverManager.unload();
+        }
     }
 
 }

@@ -22,7 +22,7 @@ public class CheckoutPageTests {
         Driver.getInstance().tearDownDriver();
     }
 
-    @Test(dataProvider = "getData", description = "To check whether the user can add cheapest chocolate to the cart and verify the total cost")
+   @Test(dataProvider = "getData", description = "To check whether the user can add cheapest chocolate to the cart and verify the total cost")
     public void verifyTotalCartPriceInCheckoutPageTest(TestData testData) {
 
         Double priceOfOneItem = new SearchFacade().searchItem(testData.getItemName())
@@ -36,10 +36,30 @@ public class CheckoutPageTests {
                         .isEqualTo(priceOfOneItem * testData.getQuantity());
     }
 
+    @Test(dataProvider = "getData", description = "To check whether the user was forced to login if he naivagates to checkout page without login")
+    public void verifyUserNavigatingToLoginPageOnCheckout(TestData testData) {
+
+        new SearchFacade().searchItem(testData.getItemName())
+                .addProductWithMentionedQtyToCart(testData.getQuantity());
+
+        String pageTitle = new CheckoutFacade().clickProceedToBuyAndReturnTitle();
+
+        Assertions.assertThat(pageTitle)
+                .isNotNull()
+                .isNotBlank()
+                .isEqualTo(testData.getTitleToVerify());
+    }
+
     @DataProvider
     public Object[][] getData(){
         return new Object[][]{
-                {TestData.builder().setItemName("Ferroro Rocher").setQuantity(2).build()}
+                {
+                    TestData.builder()
+                        .setItemName("Ferroro Rocher")
+                        .setTitleToVerify("Amazon Sign In")
+                        .setQuantity(2)
+                        .build()
+                }
         };
     }
 

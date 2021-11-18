@@ -14,5 +14,9 @@ public final class DriverManager {
     public static void setDriver(WebDriver driver){
         threadSafeDriver.set(driver);
     }
+    public static void unload(){
+        getDriver().quit();
+        threadSafeDriver.remove();
+    }
 
 }
