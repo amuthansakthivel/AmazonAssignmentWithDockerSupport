@@ -1,15 +1,10 @@
 package com.assignment.reports;
 
-import com.assignment.driver.DriverManager;
 import com.assignment.utils.ScreenshotUtils;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.markuputils.CodeLanguage;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import java.util.EnumMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Consumer;
 
 public final class FrameworkLogger {

@@ -13,4 +13,11 @@ public interface FrameworkConfig extends Config {
 
     String url();
 
+    @Key(value = "gridPath")
+    @DefaultValue(value = "http://localhost:4444/wd/hub")
+    String gridPath();
+
+    @Key(value="runmode")
+    @DefaultValue("local")
+    String runMode();
 }
