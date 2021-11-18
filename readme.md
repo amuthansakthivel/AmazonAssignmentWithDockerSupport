@@ -17,11 +17,12 @@ I cannot choose Mars & Bounty and Amazon.com because of the error message shown 
 
 ## Capabilities:
 
-1. This framework has the capability to run the tests in local machine only.
-2. Web Tests can be ran on chrome or edge browsers.
-3. Configuration can be changed from config.properties inside src/test/resources
-4. Utility methods available for Web Interactions *(SeleniumActions.java)*
-5. Integration with Jenkins for scheduling is easy. :raising_hand:
+1. This framework has the capability to run the tests in local and remote selenium grid.
+2. It can also be extended to run on clouds like browser stack or seetest.
+3. Web Tests can be run on chrome or edge browsers.
+4. Configuration can be changed from config.properties inside src/test/resources
+5. Utility methods available for Web Interactions *(SeleniumActions.java)*
+6. Integration with Jenkins for scheduling is easy. :raising_hand:
 
 ## Adding more tests :
 
