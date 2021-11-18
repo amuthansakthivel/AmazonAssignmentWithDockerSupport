@@ -1,7 +1,9 @@
 package com.assignment.config;
 
 import com.assignment.config.converter.StringToDriverTypeConverter;
+import com.assignment.config.converter.StringToRunTypeConverter;
 import com.assignment.driver.enums.DriverType;
+import com.assignment.driver.enums.RunType;
 import org.aeonbits.owner.Config;
 
 @Config.Sources(value="file:${user.dir}/src/test/resources/config.properties")
@@ -19,5 +21,6 @@ public interface FrameworkConfig extends Config {
 
     @Key(value="runmode")
     @DefaultValue("local")
-    String runMode();
+    @ConverterClass(value = StringToRunTypeConverter.class)
+    RunType runMode();
 }
