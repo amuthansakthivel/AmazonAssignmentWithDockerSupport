@@ -1,5 +1,6 @@
 package com.assignment.utils;
 
+import com.assignment.constants.FrameworkConstants;
 import com.assignment.driver.DriverManager;
 import com.assignment.reports.FrameworkLogger;
 import com.assignment.reports.LogType;
@@ -49,7 +50,7 @@ public final class SeleniumActions {
     }
 
     private static WebElement waitForElementToBePresent(By by){
-        return new WebDriverWait(DriverManager.getDriver(),10)
+        return new WebDriverWait(DriverManager.getDriver(), FrameworkConstants.getTimeout())
                 .until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
