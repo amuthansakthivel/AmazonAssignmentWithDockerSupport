@@ -53,13 +53,11 @@ Note : User should not try to run the test from test class - Might end up in NPE
    shows the time took for the individual tests in form of timeline. Hover the mouse over the timeline to get the exact
    time details.
 ![img.png](readmeimages/img6.png)
-2. Tags tab in the Dashboard view clearly indicates the pass and fail according to the functionality. Groups tag given
-   on top of tests will be picked to categorize the tests based on the functionality.
-3. The left Tests pane indicated in the above diagram contains the list of all the test run and it's log events.
-4. Click on each test tab to view the corresponding test log events.
-5. All the web tests will have a screenshot attached on failure
-6. After each test run, reports can be found under root directory and ExtentReports folder.
-7. Press "l" on the keyboard after opening the report to switch the theme to Standard.
+2. Tags tab in the Dashboard view clearly indicates the pass and fail according to the functionality.
+3. Click on each test tab to view the corresponding test log events.
+4. All the web tests will have a screenshot attached on failure
+5. After each test run, reports can be found under root directory and ExtentReports folder.
+6. Press "l" on the keyboard after opening the report to switch the theme to Standard.
 ![img.png](readmeimages/img7.png)
 
 ## Jenkins Integration :
