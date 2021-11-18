@@ -12,7 +12,8 @@ public class CheckoutPageTests extends BaseTest{
    @Test(dataProvider = "getData", description = "To check whether the user can add cheapest chocolate to the cart and verify the total cost")
     public void verifyTotalCartPriceInCheckoutPageTest(TestData testData) {
 
-        Double priceOfOneItem = new SearchFacade().searchItem(testData.getItemName())
+        Double priceOfOneItem = new SearchFacade()
+                .searchItem(testData.getItemName())
                 .addProductWithMentionedQtyToCart(testData.getQuantity())
                 .getPriceOfOneItem();
 

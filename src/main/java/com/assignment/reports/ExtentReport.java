@@ -2,11 +2,15 @@ package com.assignment.reports;
 
 import com.assignment.config.factory.ConfigFactory;
 import com.assignment.constants.FrameworkConstants;
+import com.assignment.exceptions.FrameworkException;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public final class ExtentReport {
@@ -32,6 +36,11 @@ public final class ExtentReport {
             extent.flush();
         }
         ExtentManager.unload();
+        try {
+            Desktop.getDesktop().browse(new File(FrameworkConstants.getReportPath()).toURI());
+        } catch (IOException e) {
+            throw new FrameworkException("Problem while opening report file");
+        }
 
     }
 
