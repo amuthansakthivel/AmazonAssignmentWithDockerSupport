@@ -2,6 +2,7 @@ package com.assignment.utils;
 
 import com.assignment.driver.DriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,6 +14,12 @@ public final class SeleniumActions {
     public static void waitAndClick(By by,String elementname){
         waitForElementToBePresent(by).click();
         //TODO element name for logging
+    }
+
+    public static void waitScrollAndClick(By by, String elementname){
+        WebElement element = waitForElementToBePresent(by);
+        ((JavascriptExecutor)DriverManager.getDriver())
+                .executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public static void waitAndEnterText(By by,String value,String elementname){
