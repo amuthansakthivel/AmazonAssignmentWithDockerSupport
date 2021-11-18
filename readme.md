@@ -82,6 +82,11 @@ Note : User should not try to run the test from test class - Might end up in NPE
 8. View the results in the console output.
 ![img_5.png](readmeimages/img_5.png)
 
+## Final Notes:
+
+1. I have not written any unit tests because all the methods are relatively small and static
+2. I have performed sonarlint analysis to check the code quality.
+
 ## Questions :
 
 For any further clarification - please reach out to `mech.amuthansakthivel@gmail.com`
