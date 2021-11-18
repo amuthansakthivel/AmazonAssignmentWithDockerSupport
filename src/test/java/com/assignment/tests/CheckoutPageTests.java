@@ -37,7 +37,7 @@ public class CheckoutPageTests extends BaseTest{
                 .isEqualTo(testData.getTitleToVerify());
     }
 
-    @DataProvider
+    @DataProvider(parallel = true)
     public Object[][] getData(){
         return new Object[][]{
                 {

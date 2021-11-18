@@ -12,4 +12,5 @@ public interface FrameworkConfig extends Config {
     DriverType browser();
 
     String url();
+
 }

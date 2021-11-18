@@ -1,6 +1,8 @@
 package com.assignment.utils;
 
 import com.assignment.driver.DriverManager;
+import com.assignment.reports.FrameworkLogger;
+import com.assignment.reports.LogType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -17,7 +19,7 @@ public final class SeleniumActions {
 
     public static void waitAndClick(By by,String elementname){
         waitForElementToBePresent(by).click();
-        //TODO element name for logging
+        FrameworkLogger.log(LogType.PASS,elementname+ "is clicked successfully");
     }
     public static String getText(By by){
         return waitForElementToBePresent(by).getText();
@@ -36,18 +38,15 @@ public final class SeleniumActions {
         for(String temp:winHandles) {
             if(!temp.equalsIgnoreCase(parentWinHandle)) {
                 DriverManager.getDriver().switchTo().window(temp);
+                FrameworkLogger.log(LogType.INFO, "Switched to new window successfully");
             }
         }
 
     }
-    public static void waitScrollAndClick(By by, String elementname){
-        WebElement element = waitForElementToBePresent(by);
-        ((JavascriptExecutor)DriverManager.getDriver())
-                .executeScript("arguments[0].scrollIntoView(true);", element);
-    }
 
     public static void waitAndEnterText(By by,String value,String elementname){
         waitForElementToBePresent(by).sendKeys(value);
+        FrameworkLogger.log(LogType.PASS,String.format("%s is entered in %s successfully",value,elementname));
     }
 
     private static WebElement waitForElementToBePresent(By by){
