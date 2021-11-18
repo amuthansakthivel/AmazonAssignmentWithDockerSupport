@@ -1,5 +1,9 @@
 # Amazon Assignment - Personio
 
+### Notes
+I have used amazon.in and chocalate as Rocho Ferrero. 
+I cannot choose Mars & Bounty and Amazon.com because of the error message shown by amazon due to location
+
 ## Libraries Used :
 
 1. **Selenium** - Web Automation
