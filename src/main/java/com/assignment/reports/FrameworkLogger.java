@@ -1,5 +1,7 @@
 package com.assignment.reports;
 
+import com.assignment.driver.DriverManager;
+import com.assignment.utils.ScreenshotUtils;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -15,6 +17,9 @@ public final class FrameworkLogger {
     private FrameworkLogger() {
     }
 
+    private static final Consumer<String> TAKESCREENSHOT = (message) ->
+            ExtentManager.getExtentTest().info("",
+                    MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
     private static final Consumer<String> PASS = (message) -> ExtentManager.getExtentTest().pass(message);
     private static final Consumer<String> FAIL = (message) -> ExtentManager.getExtentTest().fail(message);
     private static final Consumer<String> INFO = (message) -> ExtentManager.getExtentTest().info(message);
@@ -22,7 +27,7 @@ public final class FrameworkLogger {
 
     static {
         MAP.put(LogType.PASS, PASS);
-        MAP.put(LogType.FAIL, FAIL);
+        MAP.put(LogType.FAIL, FAIL.andThen(TAKESCREENSHOT));
         MAP.put(LogType.INFO, INFO);
     }
 
