@@ -14,7 +14,7 @@ public final class SearchResultsPage {
     private String lnkResultFromPrice = "//span[@class='a-price-whole' and text()='%s']/ancestor::span[contains(@cel_widget_id,'MAIN-SEARCH_RESULTS')]";
 
     @SneakyThrows
-    public void chooseLowestPricedItem(String itemname){
+    public void chooseLowestPricedItem(){
         Thread.sleep(3000);
         DriverManager.getDriver().findElements(labelPrice)
                 .stream()

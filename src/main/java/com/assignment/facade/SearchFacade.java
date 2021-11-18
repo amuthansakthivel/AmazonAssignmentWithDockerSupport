@@ -14,6 +14,6 @@ public final class SearchFacade {
     }
     public void searchItem(String item){
         homePage.searchItemInSearchBox(item).sortResultsWithPriceHighToLow();
-        searchResultsPage.chooseLowestPricedItem(item);
+        searchResultsPage.chooseLowestPricedItem();
     }
 }
