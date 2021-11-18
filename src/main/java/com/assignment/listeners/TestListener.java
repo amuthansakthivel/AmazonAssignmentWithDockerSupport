@@ -30,22 +30,22 @@ public class TestListener implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-
+        //no implementation needed for now
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
+        //no implementation needed for now
     }
 
     @Override
     public void onStart(ITestContext context) {
-
+        //no implementation needed for now
     }
 
     @Override
     public void onFinish(ITestContext context) {
-
+        //no implementation needed for now
     }
 
     @Override

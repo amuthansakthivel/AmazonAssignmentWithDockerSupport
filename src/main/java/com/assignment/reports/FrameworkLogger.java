@@ -12,12 +12,12 @@ public final class FrameworkLogger {
     private FrameworkLogger() {
     }
 
-    private static final Consumer<String> TAKESCREENSHOT = (message) ->
+    private static final Consumer<String> TAKESCREENSHOT = message ->
             ExtentManager.getExtentTest().info("",
                     MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
-    private static final Consumer<String> PASS = (message) -> ExtentManager.getExtentTest().pass(message);
-    private static final Consumer<String> FAIL = (message) -> ExtentManager.getExtentTest().fail(message);
-    private static final Consumer<String> INFO = (message) -> ExtentManager.getExtentTest().info(message);
+    private static final Consumer<String> PASS = message -> ExtentManager.getExtentTest().pass(message);
+    private static final Consumer<String> FAIL = message -> ExtentManager.getExtentTest().fail(message);
+    private static final Consumer<String> INFO = message -> ExtentManager.getExtentTest().info(message);
     private static final Map<LogType, Consumer<String>> MAP = new EnumMap<>(LogType.class);
 
     static {

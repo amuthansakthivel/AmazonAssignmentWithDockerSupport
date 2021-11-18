@@ -4,6 +4,8 @@ import lombok.Getter;
 
 public final class FrameworkConstants {
 
-    private @Getter static final String reportPath = System.getProperty("user.dir")+"/ExtentReports/index.html";
-    private @Getter static final int timeout = 10;
+    private FrameworkConstants(){}
+
+    @Getter private static final String REPORT_PATH = System.getProperty("user.dir")+"/ExtentReports/index.html";
+    @Getter private static final int TIMEOUT = 10;
 }

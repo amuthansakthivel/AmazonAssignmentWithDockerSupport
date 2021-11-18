@@ -21,7 +21,7 @@ public final class ExtentReport {
     public static void initReports() {
         if (Objects.isNull(extent)) {
             extent = new ExtentReports();
-            ExtentSparkReporter spark = new ExtentSparkReporter(FrameworkConstants.getReportPath());
+            ExtentSparkReporter spark = new ExtentSparkReporter(FrameworkConstants.getREPORT_PATH());
             extent.attachReporter(spark);
             spark.config().setTheme(Theme.DARK);
             spark.config().setDocumentTitle("Automation Report");
@@ -35,7 +35,7 @@ public final class ExtentReport {
         }
         ExtentManager.unload();
         try {
-            Desktop.getDesktop().browse(new File(FrameworkConstants.getReportPath()).toURI());
+            Desktop.getDesktop().browse(new File(FrameworkConstants.getREPORT_PATH()).toURI());
         } catch (IOException e) {
             throw new FrameworkException("Problem while opening report file");
         }

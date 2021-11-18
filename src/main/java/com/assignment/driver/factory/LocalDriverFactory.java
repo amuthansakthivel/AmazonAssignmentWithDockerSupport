@@ -2,11 +2,9 @@ package com.assignment.driver.factory;
 
 import com.assignment.config.factory.ConfigFactory;
 import com.assignment.driver.enums.DriverType;
-import com.assignment.driver.enums.RunType;
 import com.assignment.driver.impl.ChromeManager;
 import com.assignment.driver.impl.EdgeManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.EnumMap;
 import java.util.Map;

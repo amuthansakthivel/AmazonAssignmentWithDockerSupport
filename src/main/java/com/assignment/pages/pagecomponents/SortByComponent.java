@@ -10,8 +10,8 @@ public final class SortByComponent {
 
 
     private final By drpdwnSort = By.xpath("//span[text()='Sort by:']");
-    private final String dropdwnOption = "//a[text()='%s']";
-    private final String LOWTOHIGH = "Price: Low to High";
+    private static final String DROPDWN_OPTION = "//a[text()='%s']";
+    private static final String LOW_TO_HIGH = "Price: Low to High";
 
 
     private SortByComponent clickSort(){
@@ -19,12 +19,11 @@ public final class SortByComponent {
         return this;
     }
     private void selectSortingOption(String sortingOption){
-        System.out.println(sortingOption);
-        String modifiedXpath = DynamicXpathUtils.getModifiedXpath(dropdwnOption, sortingOption);
+        String modifiedXpath = DynamicXpathUtils.getModifiedXpath(DROPDWN_OPTION, sortingOption);
         waitAndClick(By.xpath(modifiedXpath),"Sort");
     }
     public void sortResultsWithPriceLowToHigh(){
-        clickSort().selectSortingOption(LOWTOHIGH);
+        clickSort().selectSortingOption(LOW_TO_HIGH);
     }
 
 }

@@ -3,7 +3,7 @@ package com.assignment.pages;
 import com.assignment.pages.pagecomponents.SortByComponent;
 import com.assignment.pages.pagecomponents.TopMenuComponent;
 
-public class HomePage {
+public final class HomePage {
 
     private final TopMenuComponent topMenuComponent;
     private final SortByComponent sortByComponent;

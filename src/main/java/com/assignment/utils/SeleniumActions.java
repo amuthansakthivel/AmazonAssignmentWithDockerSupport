@@ -50,7 +50,7 @@ public final class SeleniumActions {
     }
 
     private static WebElement waitForElementToBePresent(By by){
-        return new WebDriverWait(DriverManager.getDriver(), FrameworkConstants.getTimeout())
+        return new WebDriverWait(DriverManager.getDriver(), FrameworkConstants.getTIMEOUT())
                 .until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
