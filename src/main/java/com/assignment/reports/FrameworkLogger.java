@@ -1,5 +1,6 @@
 package com.assignment.reports;
 
+import com.assignment.reports.enums.LogType;
 import com.assignment.utils.ScreenshotUtils;
 import com.aventstack.extentreports.MediaEntityBuilder;
 

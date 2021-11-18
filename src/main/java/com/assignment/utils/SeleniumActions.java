@@ -3,7 +3,7 @@ package com.assignment.utils;
 import com.assignment.constants.FrameworkConstants;
 import com.assignment.driver.DriverManager;
 import com.assignment.reports.FrameworkLogger;
-import com.assignment.reports.LogType;
+import com.assignment.reports.enums.LogType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;

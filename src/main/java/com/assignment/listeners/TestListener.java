@@ -1,7 +1,7 @@
 package com.assignment.listeners;
 
 import com.assignment.reports.ExtentReport;
-import com.assignment.reports.LogType;
+import com.assignment.reports.enums.LogType;
 import org.testng.*;
 
 import java.util.Arrays;
