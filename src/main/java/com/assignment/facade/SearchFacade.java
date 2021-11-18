@@ -12,8 +12,9 @@ public final class SearchFacade {
         homePage = new HomePage();
         searchResultsPage = new SearchResultsPage();
     }
-    public void searchItem(String item){
+    public AddToCartFacade searchItem(String item){
         homePage.searchItemInSearchBox(item).sortResultsWithPriceHighToLow();
         searchResultsPage.chooseLowestPricedItem();
+        return new AddToCartFacade();
     }
 }
