@@ -21,6 +21,8 @@
 
 ## Adding more tests :
 
+Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
+
 1. Tests should be added as per the convention followed. New testng tests should be created inside the src/test/java
    folder.
 2. All the tests should extend BaseTest.java
@@ -31,6 +33,8 @@
 6. Tests should interact only with the Facade layer. This can be used to wrap the business logic.
 
 ## Running Tests :
+
+Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
 1. There are multiple ways to run the tests. During development phase you can use the **testng_web.xml** present in the root folder to run. Right click and choose run.
 2. Each of the testng xml files contains the test classes to pick for the run.
@@ -46,17 +50,14 @@
 1. Dashboard view clearly indicates the start time, end time of the run, number of tests passed and failed. It also
    shows the time took for the individual tests in form of timeline. Hover the mouse over the timeline to get the exact
    time details.
+![img.png](readmeimages/img6.png)
 2. Tags tab in the Dashboard view clearly indicates the pass and fail according to the functionality. Groups tag given
    on top of tests will be picked to categorize the tests based on the functionality.
 3. The left Tests pane indicated in the above diagram contains the list of all the test run and it's log events.
 4. Click on each test tab to view the corresponding test log events.
-5. All the web tests and mobile tests will have a screenshot attached for each step. Click on the pink base64.img to
-   view the screenshot.
-6. All the API tests will have the request endpoint, request body and response body logged in the report for debugging
-   purpose. Request body will be marked with info tag and response with pass tag for easy interpretation. This is also
-   configurable.
-7. After each test run, reports can be found under root directory and ExtentReports folder.
-8. Press "l" on the keyboard after opening the report to switch the theme to Standard.
+5. All the web tests will have a screenshot attached on failure
+6. After each test run, reports can be found under root directory and ExtentReports folder.
+7. Press "l" on the keyboard after opening the report to switch the theme to Standard.
 
 ## Jenkins Integration :
 
