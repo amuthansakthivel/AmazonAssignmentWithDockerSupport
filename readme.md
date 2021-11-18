@@ -36,14 +36,16 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
 Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 
-1. There are multiple ways to run the tests. During development phase you can use the **testng_web.xml** present in the root folder to run. Right click and choose run.
-2. Each of the testng xml files contains the test classes to pick for the run.
+1. There are multiple ways to run the tests. During development phase you can use the **testng.xml** present in the root folder to run. Right click and choose run.
+2. Each of the testng xml file should contain the test classes to pick for the run.
 3. User can also choose the thread-count parameter to run the tests in parallel.
 4. User can also choose to run via maven commands which is highly recommended.
 5. Maven profiles are configured in the pom.xml. You can run these from IDE Terminal or any OS Terminal inside the
    project folder.
 
 `mvn clean test -Pall` - To run all the tests available in the testng.xml
+
+Note : User should not try to run the test from test class - Might end up in NPE. Because the listeners are configured only in testng.xml
 
 ## Report Interpretation :
 
@@ -58,6 +60,7 @@ Prerequisites: Java 8+ , Maven 3.6.3 Installed and path set
 5. All the web tests will have a screenshot attached on failure
 6. After each test run, reports can be found under root directory and ExtentReports folder.
 7. Press "l" on the keyboard after opening the report to switch the theme to Standard.
+![img.png](readmeimages/img7.png)
 
 ## Jenkins Integration :
 
