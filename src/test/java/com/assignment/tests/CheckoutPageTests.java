@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class CheckoutPageTests extends BaseTest{
 
-   @Test(dataProvider = "getData", description = "To check whether the user can add cheapest chocolate to the cart and verify the total cost")
+    @Test(dataProvider = "getData", description = "To check whether the user can add cheapest chocolate to the cart and verify the total cost")
     public void verifyTotalCartPriceInCheckoutPageTest(TestData testData) {
 
         Double priceOfOneItem = new SearchFacade()
@@ -20,8 +20,9 @@ public class CheckoutPageTests extends BaseTest{
         Double totalCartValue = new CheckoutFacade().getTotalCartValue();
 
         Assertions.assertThat(totalCartValue)
-                        .isPositive()
-                        .isEqualTo(priceOfOneItem * testData.getQuantity());
+                .isPositive()
+                .withFailMessage(()->"Total Cart price is not displayed correctly in checkout page")
+                .isEqualTo(priceOfOneItem * testData.getQuantity());
     }
 
     @Test(dataProvider = "getData", description = "To check whether the user was forced to login if he naivagates to checkout page without login")
@@ -35,6 +36,7 @@ public class CheckoutPageTests extends BaseTest{
         Assertions.assertThat(pageTitle)
                 .isNotNull()
                 .isNotBlank()
+                .withFailMessage(()->"Login Page is not displayed on checking out a item without login")
                 .isEqualTo(testData.getTitleToVerify());
     }
 
@@ -42,11 +44,11 @@ public class CheckoutPageTests extends BaseTest{
     public Object[][] getData(){
         return new Object[][]{
                 {
-                    TestData.builder()
-                        .setItemName("Ferroro Rocher")
-                        .setTitleToVerify("Amazon Sign In")
-                        .setQuantity(2)
-                        .build()
+                        TestData.builder()
+                                .setItemName("Ferroro Rocher")
+                                .setTitleToVerify("Amazon Sign In")
+                                .setQuantity(2)
+                                .build()
                 }
         };
     }
