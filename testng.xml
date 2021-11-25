@@ -5,12 +5,13 @@
         <listener class-name="com.assignment.listeners.TestListener"/>
     </listeners>
     <test verbose="2" thread-count="2" parallel="methods" name="C:/Users/testi/selenium-project/MasterAutomationFramework/AmazonAssignment">
-        <classes><class name="com.assignment.tests.CheckoutPageTests">
-            <methods>
-                <include name="verifyTotalCartPriceInCheckoutPageTest"/>
-                <include name="verifyUserNavigatingToLoginPageOnCheckout"/>
-            </methods>
-        </class>
+        <classes>
+            <class name="com.assignment.tests.CheckoutPageTests">
+                <methods>
+                    <include name="verifyTotalCartPriceInCheckoutPageTest"/>
+                    <include name="verifyUserNavigatingToLoginPageOnCheckout"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

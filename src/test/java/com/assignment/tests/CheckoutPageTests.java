@@ -47,7 +47,7 @@ public class CheckoutPageTests extends BaseTest{
                         TestData.builder()
                                 .setItemName("Ferroro Rocher")
                                 .setTitleToVerify("Amazon Sign In")
-                                .setQuantity(2)
+                                .setQuantity(4)
                                 .build()
                 }
         };

@@ -4,10 +4,12 @@ import com.assignment.driver.enums.RunType;
 import org.aeonbits.owner.Converter;
 
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 public class StringToRunTypeConverter implements Converter<RunType> {
     @Override
     public RunType convert(Method method, String string) {
-        return RunType.valueOf(string.toUpperCase());
+        String runmodeProperty = System.getProperty("runmode");
+        return Objects.isNull(runmodeProperty) ? RunType.valueOf(string.toUpperCase()) : RunType.valueOf(runmodeProperty.toUpperCase());
     }
 }

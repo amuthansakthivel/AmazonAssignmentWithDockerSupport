@@ -1,8 +1,11 @@
 package com.assignment.config;
 
 import com.assignment.config.converter.StringToDriverTypeConverter;
+import com.assignment.config.converter.StringToRemoteTypeConverter;
 import com.assignment.config.converter.StringToRunTypeConverter;
+import com.assignment.config.converter.URLInterpreter;
 import com.assignment.driver.enums.DriverType;
+import com.assignment.driver.enums.RemoteType;
 import com.assignment.driver.enums.RunType;
 import org.aeonbits.owner.Config;
 
@@ -16,6 +19,7 @@ public interface FrameworkConfig extends Config {
     String url();
 
     @Key(value = "gridPath")
+    @ConverterClass(URLInterpreter.class)
     @DefaultValue(value = "http://localhost:4444/wd/hub")
     String gridPath();
 
@@ -23,4 +27,9 @@ public interface FrameworkConfig extends Config {
     @DefaultValue("local")
     @ConverterClass(value = StringToRunTypeConverter.class)
     RunType runMode();
+
+    @Key(value="remotemode")
+    @DefaultValue(value = "remote")
+    @ConverterClass(value = StringToRemoteTypeConverter.class)
+    RemoteType remoteMode();
 }

@@ -11,13 +11,15 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.URL;
 
-public class DockerManager implements IRemoteDriver {
-
+public class SelenoidGrid implements IRemoteDriver {
     @SneakyThrows
     @Override
     public WebDriver getDriver(){
         WebDriver driver;
         DesiredCapabilities capabilities= new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", false);
+
         if (ConfigFactory.getConfig().browser() == DriverType.EDGE) {
             capabilities.setBrowserName(BrowserType.EDGE);
         } else {
