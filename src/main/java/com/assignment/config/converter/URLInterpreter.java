@@ -9,6 +9,8 @@ public class URLInterpreter implements Converter<String> {
     @Override
     public String convert(Method method, String remoteurl) {
         String property = System.getProperty("remoteurl");
-        return Objects.isNull(property) ? remoteurl : property;
+        return Objects.isNull(property) || property.length() == 0 ?
+                remoteurl :
+                property;
     }
 }
