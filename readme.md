@@ -82,6 +82,22 @@ Note : User should not try to run the test from test class - Might end up in NPE
 8. View the results in the console output.
 ![img_5.png](readmeimages/img_5.png)
 
+##Command to run the docker container
+
+1. Make sure to have the selenium grid or selenoid grid up and running
+2. Find cwd
+
+`$current = $PWD -replace "\\", "/" -replace "C", "c"`
+
+3.Start selenoid container
+`docker run -d --name selenoid -p 4444:4444 -v //var/run/docker.sock:/var/run/docker.sock -v ${current}/config/:/etc/selenoid/:ro -v /c/Users/testi/selenoid/video/:/opt/selenoid/video/ -e OVERRIDE_VIDEO_OUTPUT_DIR=/c/Users/testi/selenoid/video/ aerokube/selenoid:latest-release`
+
+4. Start seleniod ui(only need to view live execution)
+`docker run --rm -d --name selenoid-ui --link selenoid -p 8090:8080 aerokube/selenoid-ui --selenoid-uri=http://selenoid:4444`
+
+5. Run the docker image with necessary parameters. (Remote URL can be any ip reachable to the container. All are optional parameters)
+`docker run --rm -e remoteurl=http://192.168.0.110:4444/wd/hub -e runmode=remote -e remotemode=selenoid amuthanqa/assignment:latest`
+
 ## Final Notes:
 
 1. I have not written any unit tests because all the methods are relatively small and static
