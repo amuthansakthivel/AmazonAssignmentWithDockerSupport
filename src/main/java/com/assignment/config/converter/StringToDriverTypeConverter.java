@@ -9,6 +9,7 @@ public class StringToDriverTypeConverter implements Converter<DriverType> {
 
     @Override
     public DriverType convert(Method method, String browername) {
+
         return DriverType.valueOf(browername.toUpperCase());
     }
 }

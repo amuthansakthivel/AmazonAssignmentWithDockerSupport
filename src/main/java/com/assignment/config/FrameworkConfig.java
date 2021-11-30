@@ -29,7 +29,7 @@ public interface FrameworkConfig extends Config {
     RunType runMode();
 
     @Key(value="remotemode")
-    @DefaultValue(value = "remote")
+    @DefaultValue(value = "selenoid")
     @ConverterClass(value = StringToRemoteTypeConverter.class)
     RemoteType remoteMode();
 }
