@@ -91,15 +91,21 @@ Note : User should not try to run the test from test class - Might end up in NPE
 `$current = $PWD -replace "\\", "/" -replace "C", "c"`
 
 3.Start selenoid container
+
 `docker run -d --name selenoid -p 4444:4444 -v //var/run/docker.sock:/var/run/docker.sock -v ${current}/config/:/etc/selenoid/:ro -v /c/Users/testi/selenoid/video/:/opt/selenoid/video/ -e OVERRIDE_VIDEO_OUTPUT_DIR=/c/Users/testi/selenoid/video/ aerokube/selenoid:latest-release`
 
-or Start selenium standalone container or grid
+or 
+
+Start selenium standalone container or grid
+
 `docker run -d --rm --name selenium -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:96.0`
 
 4. Start seleniod ui(only need to view live execution)
+
 `docker run --rm -d --name selenoid-ui --link selenoid -p 8090:8080 aerokube/selenoid-ui --selenoid-uri=http://selenoid:4444`
 
 5. Run the docker image with necessary parameters. (Remote URL can be any ip reachable to the container. All are optional parameters)
+
 `docker run --rm -e remoteurl=http://192.168.0.231:4444/wd/hub -e runmode=remote -e remotemode=selenoid amuthanqa/assignment:latest`
 
 6. Add the additional parameters to the jenkins build and execute shell or windows batch command
@@ -113,10 +119,13 @@ or Start selenium standalone container or grid
 ![img13.png](readmeimages/img13.png)
 
 ![img14.png](readmeimages/img14.png)
+
+
 ## Final Notes:
 
 1. I have not written any unit tests because all the methods are relatively small and static
 2. I have performed sonarlint analysis to check the code quality.
+3. Base image used in the dockerfile is customised from `maven:3.6.3-jdk-8` where the maven dependencies are downloaded and kept handy to avoid downloading maven dependencies during each run.
 
 ## Questions :
 
