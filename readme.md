@@ -1,4 +1,4 @@
-# Amazon Assignment - Personio
+# Amazon Assignment
 
 ### Notes
 I have used amazon.in and chocalate as Rocho Ferrero. 
