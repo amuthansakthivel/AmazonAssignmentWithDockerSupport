@@ -18,8 +18,9 @@ jobs:
         with:
           java-version: 11    
       - name: Build and analyze
+        with
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=amuthansakthivel_AmazonAssignmentWithDockerSupport
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=amuthansakthivel -Dsonar.projectKey=amuthansakthivel_AmazonAssignmentWithDockerSupport
