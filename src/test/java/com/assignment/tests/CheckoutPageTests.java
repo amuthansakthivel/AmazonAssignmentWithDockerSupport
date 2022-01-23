@@ -8,6 +8,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CheckoutPageTests extends BaseTest{
+    
+    //Adding a secret to verify whether the secret-scan github action is finding it or not
+    String awsAccessKey = "skdfbskfbskjfbsfsj1234==";
+    String password = "abcd1234";
 
     @Test(dataProvider = "getData", description = "To check whether the user can add cheapest chocolate to the cart and verify the total cost")
     public void verifyTotalCartPriceInCheckoutPageTest(TestData testData) {
