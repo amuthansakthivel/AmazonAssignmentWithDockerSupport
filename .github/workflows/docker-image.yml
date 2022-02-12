@@ -28,6 +28,8 @@ jobs:
     
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag amuthanqa/assignment:latest
+    - name: run the docker test container
+      run: docker run --rm -e remoteurl=http://localhost:4444/wd/hub -e runmode=remote -e remotemode=selenoid amuthanqa/assignment:latest
     - name: execute tests
       run: mvn clean test -Pall -Drunmode=remote -Dremotemode=selenoid -Dremoteurl=http://localhost:4444/wd/hub
       
