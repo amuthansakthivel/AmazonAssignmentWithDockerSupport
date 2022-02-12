@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Start Selenoid server
-    - uses: n-ton4/selenoid-github-action@master
+      uses: n-ton4/selenoid-github-action@master
       id: start-selenoid
       continue-on-error: false
       with:
@@ -24,7 +24,7 @@ jobs:
         last-versions: 1
       
     - name: checkout project 
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
     
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag amuthanqa/assignment:latest
