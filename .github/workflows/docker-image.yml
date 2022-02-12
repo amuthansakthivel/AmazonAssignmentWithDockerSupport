@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
@@ -13,7 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Start Selenoid server
+      uses: n-ton4/selenoid-github-action@master
+      id: start-selenoid
+      continue-on-error: false
+      with:
+        version: 1.10.1
+        args: -limit 10
+        browsers: chrome;firefox
+        last-versions: 1
+      
+    - name: checkout project 
     - uses: actions/checkout@v2
+    
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag amuthanqa/assignment:latest
+    - name: execute tests
+      run: docker run --rm -e remoteurl=http://localhost:4444/wd/hub -e runmode=remote -e remotemode=selenoid amuthanqa/assignment:latest
       
