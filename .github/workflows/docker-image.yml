@@ -20,7 +20,7 @@ jobs:
       with:
         version: 1.10.1
         args: -limit 10
-        browsers: chrome;firefox
+        browsers: chrome
         last-versions: 1
       
     - name: checkout project 
@@ -35,5 +35,5 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./ExtentReports/index.html
+        PUBLISH_DIR: ./ExtentReports
       
