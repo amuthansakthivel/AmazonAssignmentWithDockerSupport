@@ -35,5 +35,5 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./ExtentReports
+        PUBLISH_DIR: ./ExtentReports/index.html
       
