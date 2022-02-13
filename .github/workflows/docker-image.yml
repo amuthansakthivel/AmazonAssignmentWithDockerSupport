@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
@@ -25,10 +25,10 @@ jobs:
       
     - name: checkout project 
       uses: actions/checkout@v2
-              
+                   
     - name: execute tests
       run: mvn clean test -Pall -Drunmode=remote -Dremotemode=selenoid -Dremoteurl=http://localhost:4444/wd/hub
-      
+
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
@@ -36,4 +36,3 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./ExtentReports/index.html
-      
